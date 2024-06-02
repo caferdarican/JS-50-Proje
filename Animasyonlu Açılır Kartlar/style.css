@@ -1,0 +1,55 @@
+@import url("https://fonts.googleapis.com/css2?family=Kanit:wght@500&display=swap");
+
+body {
+  font-family: "Kanit", sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  height: 90vh;
+}
+.panel {
+  margin: 5px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 60vh;
+  flex: 0.5;
+  cursor: pointer;
+  border-radius: 30px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  position: relative;
+  transition: flex 0.5s ease-in;
+}
+.panel h3 {
+  margin: 0;
+  font-size: 24px;
+  color: rgb(10, 155, 8);
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+}
+.active {
+  flex: 5;
+}
+.active h3 {
+  opacity: 1;
+  transition: opacity 0.3s ease-in 0.5s;
+}
+
+@media (max-width: 600px) {
+  .container {
+    width: 100vw;
+  }
+  .panel:nth-child(4),
+  .panel:nth-child(5) {
+    display: none;
+  }
+}
